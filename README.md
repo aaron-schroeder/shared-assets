@@ -3,12 +3,12 @@ Host files that are used by multiple apps
 
 ## Notes about my modifications to plotly.js
 
-Script source: local download of the plotly mapbox distribution.
-It includes everything I need:
-scatter, scattermapbox, choroplethmapbox and densitymapbox
-https://github.com/plotly/plotly.js/blob/master/dist/README.md#partial-bundles
+Script source: slight modification of the [plotly strict distribution](https://github.com/plotly/plotly.js/blob/master/dist/README.md#plotlyjs-strict).
 
-Since the script is in external_scripts and supplies the global Plotly var,
+I previously used a smaller [mapbox bundle](https://github.com/plotly/plotly.js/blob/master/dist/README.md#plotlyjs-mapbox).
+But then I wanted more non-map plots than just `scatter`.
+
+Since the script is loaded in dash's `external_scripts` and supplies the global Plotly var,
 it is used over the other plotly packages by default.
 
 Note: Local scripts are by default from `async-plotlyjs.js`, which is
